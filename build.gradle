@@ -1,0 +1,37 @@
+plugins{
+	id "application"
+}
+
+apply plugin: 'java'
+
+
+repositories{
+	mavenCentral()
+}
+
+dependencies{
+	testImplementation 'junit:junit:4.12'
+	implementation 'junit:junit:4.12'
+}
+
+ext {
+   javaMainClass = "RunEdgeConvert"
+}
+
+
+test{
+	useJUnit()
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+
+sourceSets {
+  main.java.srcDir "src/main"
+  test.java.srcDir "src/test"
+}
+
+
+
